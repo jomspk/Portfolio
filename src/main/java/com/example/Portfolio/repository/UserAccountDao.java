@@ -34,12 +34,14 @@ public class UserAccountDao implements IUserAccountDao{
 		// 一件取得
 		try {
 			Map<String, Object> result = jdbcTemplate.queryForMap(sql, param);
+			System.out.println((String)result.get("user_id"));
+			System.out.println((String)result.get("password"));
 			user.setId((int)result.get("id"));
 			user.setUserId((String)result.get("user_id"));
 			user.setPassword((String)result.get("password"));
 			user.setName((String)result.get("username"));			
 		}catch(EmptyResultDataAccessException e) {
-			Optional <User> userOpl = Optional.ofNullable(user);
+			Optional <User> userOpl = Optional.ofNullable(null);
 			return userOpl;
 		}
 		

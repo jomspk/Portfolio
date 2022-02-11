@@ -1,7 +1,7 @@
-CREATE TABLE users (
-  id INT NOT NULL AUTO_INCREMENT,
-  user_id varchar(10) NOT NULL,
-  password varchar(60) NOT NULL,
-  username varchar(50),
+CREATE TABLE IF NOT EXISTS users (
+  id serial,
+  user_id varchar(64) NOT NULL,
+  password varchar(64) NOT NULL,
+  username varchar(64),
   PRIMARY KEY(id)
 );

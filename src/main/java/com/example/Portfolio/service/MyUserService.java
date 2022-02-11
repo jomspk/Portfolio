@@ -28,7 +28,6 @@ public class MyUserService implements UserDetailsService{
 		if(!user.isPresent()) {
 			throw new UsernameNotFoundException(userId + "が存在しません");
 		}
-		System.out.println("loadUserByUsernameが呼ばれた");
 		return new MyUserDetails(user.get());
 	}
 }

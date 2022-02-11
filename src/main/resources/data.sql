@@ -1,2 +1,2 @@
 INSERT INTO `users` VALUES
-(NULL,'s1270210','Bazar1102','Banri');
+(1,'s1270210','$2a$08$2uNNORUMJBR/GNrqk1T56eQYFtLadMzGTUF9xKEYKWjSE3wYhl5nS','Banri');

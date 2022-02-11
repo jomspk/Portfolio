@@ -46,12 +46,12 @@ public class PortfolioController {
 	 */
 	@GetMapping("/hello")
 	public String hello(Model model) { 
-		return "hello"; 
+		return "portfolio/hello"; 
 	}
 	@PostMapping("/hello")
 	public String formGoBack(Model model) {
 		System.out.println("helloページが要求された");
-		return "hello";
+		return "portfolio/hello";
 	}
 	@GetMapping("/loginForm")
 	public String loginForm(Model model) { 
