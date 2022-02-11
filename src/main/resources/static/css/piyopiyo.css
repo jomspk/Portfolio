@@ -1,0 +1,7 @@
+@charset "UTF-8";
+.piyopiyo{
+	color: #111;
+	background-image: url("../images/hiyoko.jpg");
+	background-size: cover;
+	height: 150px;
+}
