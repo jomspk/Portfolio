@@ -38,24 +38,9 @@ public class PortfolioController {
 	public String about_me(Model model) {
 		return "portfolio/about_me";
 	}
-	/*
-	 * @GetMapping("hello") public String hello(Model model) { return "hello"; }
-	 * 
-	 * @GetMapping("loginForm") public String loginForm(Model model) { return
-	 * "loginForm"; }
-	 */
-	@GetMapping("/hello")
-	public String hello(Model model) { 
-		return "portfolio/hello"; 
-	}
-	@PostMapping("/hello")
-	public String formGoBack(Model model) {
-		System.out.println("helloページが要求された");
-		return "portfolio/hello";
-	}
+	
 	@GetMapping("/loginForm")
 	public String loginForm(Model model) { 
-		System.out.println("loginFormが要求された");
 		return "portfolio/loginForm";
 	}
 }

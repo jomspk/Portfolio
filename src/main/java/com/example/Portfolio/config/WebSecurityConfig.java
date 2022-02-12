@@ -17,9 +17,6 @@ import com.example.Portfolio.service.MyUserService;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
-	@Autowired
-	UserDetailsService userDetailsService;
-	
 	private MyUserService userService;
 	
 	@Autowired
@@ -34,7 +31,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	// URLパス毎に制御
 	@Override
 	public void configure(HttpSecurity http) throws Exception{
-		System.out.println("configureが呼ばれた");
 		http
 			.authorizeRequests()
 				.antMatchers("/h2-console/","/portfolio","/portfolio/about_me","/portfolio/books","/portfolio/product","/portfolio/loginForm").permitAll()
@@ -45,14 +41,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.loginProcessingUrl("/login")
 			.usernameParameter("username")
 			.passwordParameter("password")
-			.defaultSuccessUrl("/portfolio/home", true)
+			.defaultSuccessUrl("/portfolio", true)
 			.failureUrl("/portfolio/loginForm?error=true");
 	}
 	
 	// ユーザー情報の取得
 	@Override
 	public void configure(AuthenticationManagerBuilder auth) throws Exception{
-		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+		auth.userDetailsService(userService).passwordEncoder(passwordEncoder());
 	}
 	
 	// パスワードハッシュ化する
